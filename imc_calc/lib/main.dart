@@ -65,7 +65,7 @@ class _HomeState extends State<Home> {
       ),
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
-          padding: EdgeInsets.fromLTRB(10.0, 5.0, 10.0, 5.0),
+          padding: EdgeInsets.fromLTRB(15.0, 5.0, 15.0, 5.0),
           child: Form(
             key: _formkey,
             child: Column(
@@ -74,7 +74,7 @@ class _HomeState extends State<Home> {
                 Icon(
                   Icons.person_outline,
                   size: 120,
-                  color: Colors.green,
+                  color: Colors.lightGreen,
                 ),
                 TextFormField(
                   controller: weigthController,
@@ -115,11 +115,16 @@ class _HomeState extends State<Home> {
                   child: Container(
                     height: 50.0,
                     child: RaisedButton(
+                      //TODO: Alterar shape do button
                       onPressed: () {
                         if (_formkey.currentState.validate()) {
                           _calculate();
                         }
                       },
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(18.0),
+                        side: BorderSide(color: Colors.green),
+                      ),
                       child: Text(
                         "Calcular",
                         style: TextStyle(color: Colors.white, fontSize: 25.0),
